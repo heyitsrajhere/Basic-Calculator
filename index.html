@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+
+    
+  // program for a simple calculator using javascript  :--
+
+  var flag; // flag use to validate two numbers
+
+  //validate two number number1 and number2
+
+      function validateDigit(number1, number2) {
+      let digit = /^[0-9.]+$/;
+     
+      if (number1.match(digit) & number2.match(digit)) {
+        flag = 1;
+      } else {
+        flag = 0;
+        alert("Please enter amount in number");
+      }
+
+    }
+
+
+//addition for two number
+let sum = (number1, number2) => {
+    number1 = parseFloat(number1);    //parseFloat converts numeric string into float point value
+    number2 = parseFloat(number2);
+    let sum = number1 + number2;
+    return sum;
+}
+
+//substraction for two numbers
+let sub = (number1, number2) => {
+    number1 = parseFloat(number1);
+    number2 = parseFloat(number2);
+    let sub = number1 - number2;
+    return sub;
+}
+
+// multiplication for two numbers
+let mul = (number1, number2) => {
+    number1 = parseFloat(number1);
+    number2 = parseFloat(number2);
+    let mul = num1 * num2;
+    return mul;
+}
+
+// division for two numbers
+let div = (number1, number2) => {
+    number1 = parseFloat(number1);
+    number2 = parseFloat(number2);
+    let div = number1 / number2;
+    return div;
+}
+
+//Average for two numbers
+let Avg = (number1, number2) => {
+    number1 = parseFloat(number1);
+    number2 = parseFloat(number2);
+    let Avg = number1 % number2;
+    return Avg;
+}
+
+// take the Input for Operation
+let number1 = prompt("Enter the Number 1");  //first input
+
+let number2 = prompt("Enter the Number 2");  //second input
+
+//validate two numbers and flag
+validateDigit(number1, number2, flag);
+
+
+// take the operator input 
+if(flag==1){
+
+  //it takes operator when user enter Number as input otherwise it gives error
+  const operator = prompt('Enter operator ( either +, -, * or / ): ');   //choose valid operator that given in propmt
+
+  // here we use if.. else statement for check conditon of operator
+
+  if (operator == '+') {    //for addition
+    alert(`${number1} ${operator} ${number2} = ${sum(number1,number2)}`);     //result display in alert box
+  }
+
+  else if (operator == '-') {   //for substraction
+    alert(`${number1} ${operator} ${number2} = ${sub(number1,number2)}`);    //result display in alert box
+  }
+
+  else if (operator == '*') {    // for multiplication
+    alert(`${number1} ${operator} ${number2} = ${mul(number1,number2)}`);     //result display in alert box
+  }
+
+  else if(operator == '/') {   //for division
+    alert(`${number1} ${operator} ${number2} = ${div(number1,number2)}`);      //result display in alert box
+  }
+
+  else if(operator == '%') {   //for division
+    alert(`${number1} ${operator} ${number2} = ${Avg(number1,number2)}`);      //result display in alert box
+  }
+
+  else{
+    alert("enter valid operator");
+  }
+}
+
+
+/*
+Test Cases:-- 
+
+1>  Addition
+
+--> 10 + 9 = 19
+
+
+2> Substraction
+
+--> 7 - 5 = 2
+
+
+3> Multiplication
+
+--> 5 * 5 = 25
+ 
+
+4> Division
+
+--> 45 / 7 =6.42...
+
+5> Average
+
+--> 60 % 4 = 0
+*/
+
+  </script>
+</body>
+</html>
+
